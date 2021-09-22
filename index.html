@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vue Boolzapp</title>
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+		<!-- /Google fonts -->
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- /Font Awesome -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		
+		<div id="root" class="app-container">
+			<div class="app-col-left">
+				<div class="header-user">
+
+				</div>
+				<div class="message-notifications">
+
+				</div>
+				<div class="search-contact">
+					<input type="text" placeholder="Cerca o inizia una nuova chat">
+				</div>
+
+				<ul class="contacts">
+					<li v-for="(contact, index) in contacts" :key="index" :class="index == 0 ? 'active' : null">
+						<div class="contact-avatar">
+							<img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+						</div>
+						<div class="contact-name">
+							{{contact.name}}
+						</div>
+					</li>
+				</ul>
+ 			</div>
+			<div class="app-col-right">
+				<div class="header-contact"></div>
+				<div class="message-container">
+
+					<div class="message">
+						<div class="message-text">
+							Hai portato a spasso il cane?
+							<div class="message-date">10/01/2021 16:15:22</div>
+						</div>
+					</div>
+
+					<div class="message sent">
+						<div class="message-text">
+							Hai portato a spasso il cane?
+							<div class="message-date">10/01/2021 16:15:22</div>
+						</div>
+					</div>
+
+					<div class="message">
+						<div class="message-text">
+							Hai portato a spasso il cane?
+							<div class="message-date">10/01/2021 16:15:22</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="send-message"></div>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

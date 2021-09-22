@@ -1,0 +1,104 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Common */
+body {
+	font-family: 'Lato', sans-serif;
+	height: 100vh;
+	background: linear-gradient(to bottom, #009688 0% 15%, #D8DBD5 15% 100%);
+	padding: 2% 0;
+}
+
+.app-container {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+	display: flex;
+}
+.app-col-left, .app-col-right {
+	height: 100%;
+}
+
+/* App Col Left */
+.app-col-left {
+	width: 30%;
+}
+.header-user {
+	height: 3.75rem;
+}
+.message-notifications {
+	height: 4.375rem;
+	background-color: #8EDAFC;
+}
+.search-contact {
+	height: 1.875rem;
+}
+.contacts {
+	height: calc(100% - 10rem);
+	overflow-y: scroll;
+}
+
+.contacts li {
+	padding: .625rem 1.25rem;
+	display: flex;
+}
+.contacts li.active {
+	background-color: #E9EBEB;
+}
+.contact-avatar {
+	width: 3.75rem;
+	height: 3.75rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.contact-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.contact-name {
+	margin-left: .9375rem;
+}
+
+/* App col Right */
+.app-col-right {
+	width: 70%;
+}
+.header-contact, .send-message {
+	height: 3.75rem;
+}
+
+/* Message */
+.message-container {
+	height: calc(100% - 7.5rem);
+	background-image: url('../img/mine.jpg');
+	overflow-y: scroll;
+	padding: 3.125rem;
+}
+.message {
+	display: flex;
+}
+.message.sent .message-text{
+	background: #D5F9BA;
+	margin-left: auto;
+}
+.message-text {
+	position: relative;
+	width: 40%;
+	padding: 1.25rem;
+	border-radius: .625rem;
+	background: #fff;
+	margin-bottom: .625rem;
+}
+.message-date {
+	position: absolute;
+	font-size: .625rem;
+	right: .1875rem;
+	bottom: .1875rem;
+	color: gray;
+}
