@@ -29,7 +29,8 @@ body {
 	width: 30%;
 }
 .header-user {
-	height: 3.75rem;
+	height: 4rem;
+	background-color: #EAEAEA;
 }
 .message-notifications {
 	height: 4.375rem;
@@ -39,7 +40,7 @@ body {
 	height: 1.875rem;
 }
 .contacts {
-	height: calc(100% - 10rem);
+	height: calc(100% - 10.25rem);
 	overflow-y: scroll;
 }
 
@@ -51,8 +52,8 @@ body {
 	background-color: #E9EBEB;
 }
 .contact-avatar {
-	width: 3.75rem;
-	height: 3.75rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	border-radius: 50%;
 	overflow: hidden;
 }
@@ -70,7 +71,18 @@ body {
 	width: 70%;
 }
 .header-contact, .send-message {
-	height: 3.75rem;
+	height: 4rem;
+}
+.header-contact {
+	background: #EAEAEA;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 .625rem;
+}
+.current-contact {
+	display: flex;
+	align-items: center;
 }
 
 /* Message */
@@ -83,7 +95,7 @@ body {
 .message {
 	display: flex;
 }
-.message.sent .message-text{
+.message.inviato .message-text{
 	background: #D5F9BA;
 	margin-left: auto;
 }
