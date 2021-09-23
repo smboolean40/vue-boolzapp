@@ -95,7 +95,7 @@ body {
 .message {
 	display: flex;
 }
-.message.inviato .message-text{
+.message.sent .message-text{
 	background: #D5F9BA;
 	margin-left: auto;
 }
