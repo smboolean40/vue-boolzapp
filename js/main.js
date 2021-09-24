@@ -83,8 +83,31 @@ const app = new Vue({
 				],
 			},
 		],
-		indexCurrentContact: 0
+		indexCurrentContact: 0,
+		newMessage: ""
 	},
 	methods: {
+		sendMessage() {
+
+			this.contacts[this.indexCurrentContact].messages.push({
+				date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+				message: this.newMessage,
+				status: 'sent'
+			});
+			// pulisco il campo input
+			this.newMessage = "";
+
+			setTimeout(() => {
+				this.contacts[this.indexCurrentContact].messages.push({
+					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+					message: 'ok',
+					status: 'recived'
+				});
+			}, 1000);
+		}
+	},
+	updated() {
+		var objDiv = document.getElementById("conv");
+		objDiv.scrollTop = objDiv.scrollHeight;
 	}
 });
