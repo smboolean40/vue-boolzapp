@@ -115,7 +115,7 @@ body {
 	outline: none;
 }
 /* Message */
-.message-container {
+.messages-container {
 	height: calc(100% - 8rem);
 	background-image: url('../img/mine.jpg');
 	overflow-y: scroll;
@@ -124,13 +124,18 @@ body {
 .message {
 	display: flex;
 }
+.message-container {
+	position: relative;
+	width: 40%;
+}
 .message.sent .message-text{
 	background: #D5F9BA;
+}
+.message.sent .message-container {
 	margin-left: auto;
 }
 .message-text {
 	position: relative;
-	width: 40%;
 	padding: 1.25rem;
 	border-radius: .625rem;
 	background: #fff;
@@ -143,4 +148,20 @@ body {
 	right: .1875rem;
 	bottom: .1875rem;
 	color: gray;
+}
+
+.message-info {
+	position: absolute;
+	top: calc(100% - .625rem);
+	right: 0;
+	background-color: #fff;
+	z-index: 1;
+}
+.message-info ul {
+	list-style: none;
+}
+.message-info li {
+	padding: .625rem;
+	font-size: .875rem;
+	cursor: pointer;
 }

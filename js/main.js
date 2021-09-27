@@ -85,7 +85,11 @@ const app = new Vue({
 		],
 		indexCurrentContact: 0,
 		newMessage: "",
-		searchText: ""
+		searchText: "",
+		messageInfo: {
+			visible: false,
+			index: null
+		}
 	},
 	methods: {
 		sendMessage() {
@@ -114,6 +118,26 @@ const app = new Vue({
 					element.visible = false;
 				}
 			});
+		},
+		chanceContact(index) {
+			this.indexCurrentContact = index
+			this.resetMessageInfo();
+		},
+		deleteMessage(index) {
+			this.contacts[this.indexCurrentContact].messages.splice(index, 1);
+			this.resetMessageInfo();
+		},
+		showMessageInfo(index) {
+			if ( index == this.messageInfo.index ) {
+				this.resetMessageInfo();
+			} else {
+				this.messageInfo.visible = true;
+				this.messageInfo.index = index;	
+			}
+		},
+		resetMessageInfo() {
+			this.messageInfo.visible = false;
+			this.messageInfo.index = null
 		}
 	},
 	// updated() {
