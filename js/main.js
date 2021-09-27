@@ -84,7 +84,8 @@ const app = new Vue({
 			},
 		],
 		indexCurrentContact: 0,
-		newMessage: ""
+		newMessage: "",
+		searchText: ""
 	},
 	methods: {
 		sendMessage() {
@@ -104,10 +105,19 @@ const app = new Vue({
 					status: 'recived'
 				});
 			}, 1000);
+		},
+		filterContact() {
+			this.contacts.forEach((element) => {
+				if(element.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+					element.visible = true;
+				} else {
+					element.visible = false;
+				}
+			});
 		}
 	},
-	updated() {
-		var objDiv = document.getElementById("conv");
-		objDiv.scrollTop = objDiv.scrollHeight;
-	}
+	// updated() {
+	// 	var objDiv = document.getElementById("conv");
+	// 	objDiv.scrollTop = objDiv.scrollHeight;
+	// }
 });

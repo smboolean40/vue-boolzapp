@@ -26,14 +26,16 @@
 
 				</div>
 				<div class="search-contact">
-					<input type="text" placeholder="Cerca o inizia una nuova chat">
+					<input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchText" @keyup="filterContact()">
 				</div>
 
 				<ul class="contacts">
 					<li v-for="(contact, index) in contacts" 
 						:key="index" 
 						:class="index == indexCurrentContact ? 'active' : null" 
-						@click="indexCurrentContact = index">
+						@click="indexCurrentContact = index"
+						v-if="contact.visible"
+						>
 						<div class="contact-avatar">
 							<img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
 						</div>
@@ -54,7 +56,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="message-container" id="conv">
+				<div class="message-container" v-chat-scroll>
 
 					<div class="message" v-for="(message, index) in contacts[indexCurrentContact].messages" :class="message.status" :key="index">
 						<div class="message-text">
@@ -80,6 +82,7 @@
 
 		<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
